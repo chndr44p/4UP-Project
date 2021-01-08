@@ -1,0 +1,94 @@
+*{ margin: 0; padding: 0; box-sizing: 0; }
+
+header{
+    width: 0vw; height: 100vh;
+    background-position: left;
+    background-size: auto;
+}    
+
+.navbar{
+    display: inline-block;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 15px;
+    src: 'Josefins Sans';
+    background-color: transparent;
+}
+
+.nav-list li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    color: #2b2727;
+    position: relative;
+}
+
+.nav-list li a::before{
+    content: '';
+    position: absolute;
+    width: 100%; height: 1px;
+    bottom: -5px;
+    background-color: #565656;
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+.nav-list li a:hover::before{ transform: scale(1.3); }
+
+body{
+    background-image: url(../img/bg.png);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-accordion{
+    width: 90%; height: 80vh;
+    display: flex;
+}
+
+.img{
+    flex: 1;
+    height: 100%;
+    transform: skew(5deg);
+    cursor: pointer;
+    margin: 0 2px;
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #222;
+    position: relative;
+}
+
+.img1{ background-image: url("../imggallery/imggallery1-1.jpg"); }
+.img2{ background-image: url("../imggallery/imggallery2-2.jpg"); }
+.img3{ background-image: url("../imggallery/imggallery3-3.jpg"); }
+.img4{ background-image: url("../imggallery/imggallery4.jpg"); }
+.img5{ background-image: url("../imggallery/imggallery5.jpg"); }
+
+.img p{
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    transform: rotate(-90deg);
+    transform-origin: 0% 0%;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+
+.img-accordion:hover .img{ transform: skew(0); }
+
+.img:hover{ flex: 5; }
+
+.img:hover p{
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    transform: rotate(0deg);
+}
